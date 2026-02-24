@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keerthika S | Professional Java Developer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: #ffffff;
+        line-height: 1.6;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-size: 16px;
+      }
+
+      /* Modern Glassmorphism Header */
+      header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        backdrop-filter: blur(10px);
+        padding: 15px 8%;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      header h2 {
+        color: #ffffff;
+        font-size: 2rem;
+        margin-bottom: 8px; /* Increased gap */
+        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+      }
+
+      header p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 8px; /* Added gap */
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+
+      nav {
+        margin-top: 8px; /* Increased gap */
+      }
+
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin-right: 30px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        position: relative;
+        transition: color 0.3s;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: #ffffff;
+        left: 0;
+        bottom: -5px;
+        transition: width 0.3s;
+        border-radius: 2px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      /* Section Styling */
+      section {
+        padding: 120px 8% 80px 8%;
+        min-height: 100vh;
+        position: relative;
+        scroll-margin-top: 120px;
+      }
+
+      /* HOME SECTION - KEPT AS BEFORE WITH INCREASED GAP */
+      #home {
+        position: relative;
+        padding-top: 150px; /* Increased from 140px to create more gap from header */
+        background-image: url("WhatsApp Image 2026-02-24 at 11.48.23 AM.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      #home::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.8),
+          rgba(118, 75, 162, 0.9)
+        );
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      #home > * {
+        position: relative;
+        z-index: 2;
+      }
+
+      .home-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .home-content {
+        width: 100%;
+      }
+
+      #home h1 {
+        font-size: 2.2rem;
+        margin-bottom: 25px; /* Increased gap between heading and greeting */
+        color: #ffffff;
+        text-shadow: 0 2px 20px rgba(255, 255, 255, 0.3);
+        animation: slideIn 1s ease;
+      }
+
+      #home .greeting-text {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 10px; /* Increased gap */
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      #home .greeting-name {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 5px 15px;
+        border-radius: 40px;
+        font-size: 1.4rem;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      #home .greeting-title {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.95);
+        margin-bottom: 25px; /* Added gap before the card */
+        margin-left: 5px;
+      }
+
+      /* INCREASED FONT SIZE FOR THE DESCRIPTION LINE */
+      #home .card p {
+        font-size: 1.25rem; /* Increased from 1.2rem */
+        line-height: 1.8;
+        font-weight: 400;
+        margin-bottom: 20px; /* Added gap before tags */
+      }
+
+      #home .card span {
+        font-size: 0.9rem; /* Slightly increased */
+        padding: 8px 18px; /* Increased padding */
+        margin-right: 10px; /* Added gap between tags */
+      }
+
+      .greeting {
+        margin-bottom: 15px; /* Adjusted */
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .wave {
+        display: inline-block;
+        animation: wave 2.5s infinite;
+        transform-origin: 70% 70%;
+        font-size: 2rem;
+        margin-right: 8px;
+      }
+
+      @keyframes wave {
+        0% {
+          transform: rotate(0deg);
+        }
+        10% {
+          transform: rotate(14deg);
+        }
+        20% {
+          transform: rotate(-8deg);
+        }
+        30% {
+          transform: rotate(14deg);
+        }
+        40% {
+          transform: rotate(-4deg);
+        }
+        50% {
+          transform: rotate(10deg);
+        }
+        60% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      /* EDUCATION SECTION */
+      #education {
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      #education h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+      }
+
+      .education-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .education-image {
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        transition: transform 0.3s;
+        background-color: #f0f0f0;
+        max-height: 280px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .education-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        max-height: 280px;
+      }
+
+      .education-content {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+      }
+
+      .education-content h3 {
+        font-size: 1.9rem;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+
+      .education-content p {
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .education-content i {
+        width: 28px;
+        color: #fff;
+        font-size: 1.2rem;
+      }
+
+      /* SKILLS SECTION */
+      #skills {
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46a1 100%);
+      }
+
+      #skills h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .skill-item {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 30px 20px;
+        border-radius: 18px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        transition: all 0.3s;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+      }
+
+      .skill-item i {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #ffffff;
+      }
+
+      .skill-item h3 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+
+      .skill-item p {
+        font-size: 1.1rem;
+      }
+
+      /* PROJECTS SECTION */
+      #projects {
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46a1 100%);
+      }
+
+      #projects h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .project-box {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        padding: 35px 20px;
+        border-radius: 20px;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+      }
+
+      .project-box i {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        color: #fff;
+      }
+
+      .project-box h3 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+
+      .project-box p {
+        font-size: 1rem;
+      }
+
+      .project-box:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(102, 126, 234, 0.5);
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .project-box:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .project-box:hover:before {
+        left: 100%;
+      }
+
+      /* Modal Styling */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(102, 126, 234, 0.9);
+        backdrop-filter: blur(10px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        z-index: 2000;
+      }
+
+      .modal:target {
+        display: flex;
+        animation: modalFade 0.3s ease;
+      }
+
+      .modal-content {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        padding: 35px;
+        border-radius: 25px;
+        max-width: 520px;
+        width: 100%;
+        position: relative;
+        animation: modalSlide 0.4s ease;
+        box-shadow: 0 30px 60px rgba(102, 126, 234, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .modal-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+        color: #fff;
+      }
+
+      .modal-content p {
+        color: #f0f0f0;
+        line-height: 1.7;
+        font-size: 1.1rem;
+      }
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 28px;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: all 0.3s;
+      }
+
+      .close:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: rotate(90deg);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 30px;
+        background: linear-gradient(135deg, #553c9a, #2b3a67);
+        color: #fff;
+        font-size: 1.1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      /* CERTIFICATIONS SECTION */
+      #certifications {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #553c9a 0%, #2b3a67 100%);
+      }
+
+      #certifications h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+      }
+
+      .cert-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-top: 25px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cert-left,
+      .cert-right {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 22px;
+        padding: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+      }
+
+      .cert-left h3,
+      .cert-right h3 {
+        font-size: 1.5rem;
+        margin-bottom: 18px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-shadow: 0 2px 20px rgba(255, 255, 255, 0.3);
+      }
+
+      .cert-left h3 i,
+      .cert-right h3 i {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        color: #fff;
+      }
+
+      .cert-items,
+      .accomplishment-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .cert-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        border-left: 4px solid #ffffff;
+        transition: all 0.3s;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .cert-item:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateX(10px);
+        border-left-width: 8px;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+      }
+
+      .cert-icon {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .cert-detail h4 {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+        color: #fff;
+      }
+
+      .cert-detail p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .cert-link-icon {
+        color: #fff;
+        font-size: 0.9rem;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+      }
+
+      .cert-item:hover .cert-link-icon {
+        opacity: 1;
+      }
+
+      .accomplishment-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        transition: all 0.3s;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .accomplishment-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+      }
+
+      .accomplishment-icon {
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .accomplishment-content h4 {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+        color: #fff;
+      }
+
+      .accomplishment-content p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .accomplishment-badge {
+        display: inline-block;
+        padding: 3px 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 18px;
+        font-size: 0.8rem;
+        margin-top: 5px;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .accomplishment-link-icon {
+        color: #fff;
+        font-size: 0.9rem;
+        opacity: 0.7;
+        margin-left: 6px;
+        transition: opacity 0.3s;
+      }
+
+      .accomplishment-item:hover .accomplishment-link-icon {
+        opacity: 1;
+      }
+
+      /* CONTACT SECTION */
+      #contact {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      #contact h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .contact-info p {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.1rem;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 12px 20px;
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s;
+      }
+
+      .contact-info p:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(5px);
+      }
+
+      .contact-info i {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        font-size: 1.1rem;
+        color: #fff;
+      }
+
+      .contact-info a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+      }
+
+      .contact-info a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      /* Animations */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes modalFade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes modalSlide {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        #home h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.9rem !important;
+        }
+
+        #home .greeting-text {
+          font-size: 1.5rem;
+        }
+
+        #home .greeting-name {
+          font-size: 1.2rem;
+        }
+
+        #home .greeting-title {
+          font-size: 1.1rem;
+        }
+
+        #home .card p {
+          font-size: 1.1rem; /* Slightly smaller on mobile */
+        }
+
+        header h2 {
+          font-size: 1.7rem;
+        }
+
+        nav a {
+          font-size: 1rem;
+          margin-right: 20px;
+        }
+
+        header {
+          padding: 12px 5%;
+        }
+
+        section {
+          padding: 100px 5% 60px 5%;
+          scroll-margin-top: 100px;
+        }
+
+        #home {
+          padding-top: 130px; /* Adjusted for mobile */
+        }
+
+        .cert-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .education-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #home h1 {
+          font-size: 1.5rem;
+        }
+
+        h2 {
+          font-size: 1.7rem !important;
+        }
+
+        #home .greeting-text {
+          font-size: 1.3rem;
+        }
+
+        #home .greeting-name {
+          font-size: 1.1rem;
+        }
+
+        #home .card p {
+          font-size: 1rem; /* Adjusted for mobile */
+        }
+
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 90px 5% 50px 5%;
+          scroll-margin-top: 90px;
+        }
+
+        #home {
+          padding-top: 120px; /* Adjusted for mobile */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Keerthika S</h2>
+      <p>
+        <i class="fas fa-bullseye"></i> Entry-Level CSE Fresher | Passionate
+        Java Developer Seeking Software Roles
+      </p>
+      <nav>
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+        <a href="#skills"><i class="fas fa-cogs"></i> Technical Skill</a>
+        <a href="#certifications"
+          ><i class="fas fa-certificate"></i> Certifications</a
+        >
+        <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </nav>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home">
+      <div class="home-container">
+        <div class="home-content">
+          <h1>Professional Java Developer Portfolio</h1>
+
+          <div class="greeting">
+            <div class="greeting-text">
+              <span class="wave">👋</span>
+              <span>Hi, I'm </span>
+              <span class="greeting-name">Keerthika S</span>
+            </div>
+            <div class="greeting-title">
+              <i class="fas fa-laptop-code"></i> Computer Science Engineering
+              Student
+            </div>
+          </div>
+
+          <div class="card">
+            <p>
+              Passionate about Java development, database management, and
+              building scalable software solutions using modern development
+              tools and technologies. Quick learner with strong problem-solving
+              skills and attention to detail.
+            </p>
+            <div
+              style="
+                margin-top: 20px;
+                display: flex;
+                gap: 15px;
+                flex-wrap: wrap;
+              "
+            >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.2);
+                  padding: 8px 18px;
+                  border-radius: 25px;
+                  font-size: 0.9rem;
+                "
+                ><i class="fas fa-check-circle"></i> Java</span
+              >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.2);
+                  padding: 8px 18px;
+                  border-radius: 25px;
+                  font-size: 0.9rem;
+                "
+                ><i class="fas fa-check-circle"></i> SQL</span
+              >
+              <span
+                style="
+                  background: rgba(255, 255, 255, 0.2);
+                  padding: 8px 18px;
+                  border-radius: 25px;
+                  font-size: 0.9rem;
+                "
+                ><i class="fas fa-check-circle"></i> JDBC</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education">
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="education-container">
+        <div class="education-image">
+          <img
+            src="WhatsApp Image 2026-02-24 at 10.52.48 AM.jpeg"
+            alt="Government College of Engineering - Salem"
+            onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\' viewBox=\'0 0 400 300\'%3E%3Crect width=\'400\' height=\'300\' fill=\'%23667eea\'/%3E%3Ctext x=\'50\' y=\'150\' font-family=\'Arial\' font-size=\'20\' fill=\'%23ffffff\'%3ECollege Image%3C/text%3E%3C/svg%3E';"
+          />
+        </div>
+        <div class="education-content">
+          <h3>Government College of Engineering – Salem</h3>
+          <p>
+            <i class="fas fa-certificate"></i> <strong>Degree:</strong> Bachelor
+            of Engineering (B.E)
+          </p>
+          <p>
+            <i class="fas fa-laptop-code"></i> <strong>Branch:</strong> Computer
+            Science and Engineering
+          </p>
+          <p>
+            <i class="fas fa-calendar"></i> <strong>Year:</strong> Currently
+            Pursuing 3rd Year
+          </p>
+          <p>
+            <i class="fas fa-calendar-check"></i>
+            <strong>Expected Graduation:</strong> 2027
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <h2><i class="fas fa-cogs"></i> Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <i class="fab fa-java"></i>
+          <h3>Programming Languages</h3>
+          <p>Java</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-database"></i>
+          <h3>Database</h3>
+          <p>SQL</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-tools"></i>
+          <h3>Tools</h3>
+          <p>VS Code, Git & GitHub, Linux</p>
+        </div>
+        <div class="skill-item">
+          <i class="fas fa-layer-group"></i>
+          <h3>Frameworks & Concepts</h3>
+          <p>JDBC, Web Development</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications">
+      <h2>
+        <i class="fas fa-certificate"></i> Certifications & Accomplishments
+      </h2>
+
+      <div class="cert-container">
+        <div class="cert-left">
+          <h3><i class="fas fa-award"></i> Certifications</h3>
+          <div class="cert-items">
+            <a
+              href="https://www.linkedin.com/posts/keerthika-senthilnathan-266815299_proud-to-announce-the-successful-completion-activity-7407745886442778624-clRI?utm_source=share&utm_medium=member_android&rcm=ACoAAEgzpC4BEogMGsSp6PthKWV7pZuOzHBKjtQ"
+              target="_blank"
+              class="cert-item"
+            >
+              <div class="cert-icon">
+                <i class="fab fa-java"></i>
+              </div>
+              <div class="cert-detail">
+                <h4>Java Programming Certification</h4>
+                <p><i class="fas fa-calendar-alt"></i> Coursera</p>
+              </div>
+              <i class="fas fa-external-link-alt cert-link-icon"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/posts/keerthika-senthilnathan-266815299_proud-to-have-completed-a-foundational-certification-activity-7382039048158228481-uH1Q?utm_source=share&utm_medium=member_android&rcm=ACoAAEgzpC4BEogMGsSp6PthKWV7pZuOzHBKjtQ"
+              target="_blank"
+              class="cert-item"
+            >
+              <div class="cert-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <div class="cert-detail">
+                <h4>MongoDB NoSQL Certification</h4>
+                <p><i class="fas fa-calendar-alt"></i> MongoDB University</p>
+              </div>
+              <i class="fas fa-external-link-alt cert-link-icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="cert-right">
+          <h3><i class="fas fa-trophy"></i> Accomplishments</h3>
+          <div class="accomplishment-list">
+            <a
+              href="https://www.linkedin.com/posts/keerthika-senthilnathan-266815299_proud-to-announce-that-i-have-successfully-activity-7389003577115119616-YBT_?utm_source=share&utm_medium=member_android&rcm=ACoAAEgzpC4BEogMGsSp6PthKWV7pZuOzHBKjtQ"
+              target="_blank"
+              class="accomplishment-item"
+            >
+              <div class="accomplishment-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="accomplishment-content">
+                <h4>Gen Engineering Workshop with AI Tools</h4>
+                <p><i class="fas fa-users"></i> Participant</p>
+                <span class="accomplishment-badge">AI & ML</span>
+              </div>
+              <i class="fas fa-external-link-alt accomplishment-link-icon"></i>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/posts/keerthika-senthilnathan-266815299_javadevelopment-internship-aicte-activity-7420297879883370496-aLIl?utm_source=share&utm_medium=member_android&rcm=ACoAAEgzpC4BEogMGsSp6PthKWV7pZuOzHBKjtQ"
+              target="_blank"
+              class="accomplishment-item"
+            >
+              <div class="accomplishment-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div class="accomplishment-content">
+                <h4>Java Development Internship</h4>
+                <p><i class="fas fa-building"></i> Oasis Infobyte</p>
+                <span class="accomplishment-badge">1 Month</span>
+              </div>
+              <i class="fas fa-external-link-alt accomplishment-link-icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+      <div class="projects-grid">
+        <a href="#hotel" class="project-box">
+          <i class="fas fa-hotel"></i>
+          <h3>Hotel Management System</h3>
+          <p>Click for details</p>
+        </a>
+        <a href="#reservation" class="project-box">
+          <i class="fas fa-ticket-alt"></i>
+          <h3>Online Reservation System</h3>
+          <p>Click for details</p>
+        </a>
+        <a href="#atm" class="project-box">
+          <i class="fas fa-credit-card"></i>
+          <h3>ATM Interface</h3>
+          <p>Click for details</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div id="hotel" class="modal">
+      <div class="modal-content">
+        <a href="#projects" class="close">&times;</a>
+        <i
+          class="fas fa-hotel"
+          style="font-size: 2.5rem; margin-bottom: 18px"
+        ></i>
+        <h3>Hotel Management System</h3>
+        <p>
+          Developed using Java, JDBC, and SQL. Features include room booking,
+          customer management, billing system, and database connectivity.
+        </p>
+        <div
+          style="
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+          "
+        >
+          <p><strong>Technologies:</strong> Java, JDBC, MySQL</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="reservation" class="modal">
+      <div class="modal-content">
+        <a href="#projects" class="close">&times;</a>
+        <i
+          class="fas fa-ticket-alt"
+          style="font-size: 2.5rem; margin-bottom: 18px"
+        ></i>
+        <h3>Online Reservation System</h3>
+        <p>
+          Java-based ticket booking application with PNR status checking and
+          ticket cancellation functionality.
+        </p>
+        <div
+          style="
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+          "
+        >
+          <p>
+            <strong>Technologies:</strong> Core Java, File Handling, Collections
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="atm" class="modal">
+      <div class="modal-content">
+        <a href="#projects" class="close">&times;</a>
+        <i
+          class="fas fa-credit-card"
+          style="font-size: 2.5rem; margin-bottom: 18px"
+        ></i>
+        <h3>ATM Interface</h3>
+        <p>
+          Secure ATM simulation system with user authentication, deposit,
+          withdrawal, and balance inquiry operations.
+        </p>
+        <div
+          style="
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+          "
+        >
+          <p><strong>Technologies:</strong> Java, OOP, Exception Handling</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h2><i class="fas fa-address-card"></i> Contact Information</h2>
+      <div class="card contact-info">
+        <p>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:senthilnathankeerthi@gmail.com"
+            >senthilnathankeerthi@gmail.com</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-linkedin"></i>
+          <a
+            href="https://www.linkedin.com/in/keerthika-senthilnathan-266815299"
+            target="_blank"
+            >linkedin.com/in/keerthika-senthilnathan</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-github"></i>
+          <a href="https://github.com/Keerthika195" target="_blank"
+            >github.com/Keerthika195</a
+          >
+        </p>
+        <p><i class="fas fa-map-marker-alt"></i> Salem, Tamil Nadu</p>
+      </div>
+    </section>
+
+    <footer>
+      <p><i class="far fa-copyright"></i> 2026 Keerthika S | Java Developer</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const collegeImg = document.querySelector(".education-image img");
+        if (collegeImg) {
+          collegeImg.onerror = function () {
+            this.onerror = null;
+            this.src =
+              "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23667eea'/%3E%3Ctext x='30' y='150' font-family='Arial' font-size='20' fill='%23ffffff'%3ECollege Image%3C/text%3E%3C/svg%3E";
+          };
+        }
+      });
+    </script>
+  </body>
+</html>
